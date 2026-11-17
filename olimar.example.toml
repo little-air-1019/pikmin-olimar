@@ -1,0 +1,19 @@
+# 複製為 olimar.toml，以 `olimar --config olimar.toml ...` 使用。皆為選填；未知欄位會報錯。
+bundle = "com.apple.ScreenContinuity"
+device = "orca"               # orca：診斷／相容；native：快速（常駐 Swift daemon，也可用 --device native 覆寫）
+timezone = "Asia/Taipei"      # 遊戲每日免費次數的午夜重設時區
+runtime = "runtime"           # DB、證據、helper 都放這裡（已 gitignore）
+respawn_seconds = 300         # 戰鬥結束後候選重生估計；僅估計，種類須重讀
+max_obs_age = 3.0             # 觀察超過幾秒就拒絕點擊
+max_cards = 3                 # 一次 run 最多開啟幾張蘑菇卡
+max_scrolls = 3               # 最多橫向捲動幾次
+poll_interval = 0.04          # 畫面就緒輪詢間隔（取代固定 sleep）
+wait_timeout = 3.0            # 每個畫面轉換最多等幾秒，逾時就停止
+confirm_timeout = 8.0         # GO 後等待『剩餘次數減 1』的上限，逾時＝pending
+require_full_team = false     # true：隊伍未達上限也不派遣
+color_mode = "verify"         # verify：特殊蘑菇篩選顏色並驗證；auto：一律交給遊戲「自動」
+filter_swipes = 3             # 找不到顏色圓點時最多滑動篩選列幾次
+slow_interval = 30.0          # watch：離預估重生時間很遠時的輪詢秒數
+fast_interval = 0.5           # watch：預估重生時間附近的輪詢秒數
+near_before = 30.0            # 快速輪詢窗：預估時間前幾秒
+near_after = 120.0            # 快速輪詢窗：預估時間後幾秒
